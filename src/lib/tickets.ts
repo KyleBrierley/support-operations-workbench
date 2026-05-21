@@ -196,6 +196,7 @@ export async function listTickets(filters: TicketFilters = {}) {
         ticket.priority,
         ticket.status,
         ...ticket.tags,
+        ...ticket.notes,
       ]
         .join(" ")
         .toLowerCase()
