@@ -1,0 +1,58 @@
+[
+  {
+    "id": "TCK-1007",
+    "title": "Cannot invite second billing admin",
+    "customer": "Northstar Health",
+    "email": "maya@northstar.example",
+    "summary": "The account owner can invite one billing admin, but the second invite returns a 409 conflict even when the email is new.",
+    "status": "open",
+    "priority": "urgent",
+    "assigneeId": "sam",
+    "tags": ["billing", "permissions"],
+    "notes": ["Customer reproduced this twice from the production workspace."],
+    "createdAt": "2026-05-19T16:45:00.000Z",
+    "updatedAt": "2026-05-20T15:30:00.000Z"
+  },
+  {
+    "id": "TCK-1006",
+    "title": "Ticket CSV export drops resolved rows",
+    "customer": "Pinebox Labs",
+    "email": "ops@pinebox.example",
+    "summary": "CSV export from the queue excludes resolved tickets when the user selects the all-status filter.",
+    "status": "pending",
+    "priority": "high",
+    "assigneeId": "lee",
+    "tags": ["exports", "reporting"],
+    "notes": ["Support asked whether this is a frontend filter issue or API behavior."],
+    "createdAt": "2026-05-18T19:20:00.000Z",
+    "updatedAt": "2026-05-20T12:10:00.000Z"
+  },
+  {
+    "id": "TCK-1005",
+    "title": "Search ignores customer email",
+    "customer": "Aster Coffee",
+    "email": "help@aster.example",
+    "summary": "Typing a customer email into search does not return matching tickets, although title and summary matching work.",
+    "status": "open",
+    "priority": "medium",
+    "assigneeId": null,
+    "tags": ["search"],
+    "notes": [],
+    "createdAt": "2026-05-17T09:05:00.000Z",
+    "updatedAt": "2026-05-19T21:50:00.000Z"
+  },
+  {
+    "id": "TCK-1004",
+    "title": "Mobile reply drawer clips long names",
+    "customer": "Riverfront Legal",
+    "email": "admin@riverfront.example",
+    "summary": "On narrow screens the requester name overlaps the reply button in the ticket detail drawer.",
+    "status": "resolved",
+    "priority": "low",
+    "assigneeId": "sam",
+    "tags": ["ui", "mobile"],
+    "notes": ["Fixed in a patch branch; waiting for visual verification."],
+    "createdAt": "2026-05-16T11:35:00.000Z",
+    "updatedAt": "2026-05-18T14:12:00.000Z"
+  }
+]
