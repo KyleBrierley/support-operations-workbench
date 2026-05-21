@@ -72,6 +72,29 @@ test("filters tickets by customer email and status", async () => {
   assert.equal(resolvedMatches[0].title, "Mobile drawer");
 });
 
+test("filters tickets by note text", async () => {
+  const ticket = await createTicket(
+    parseCreateTicketPayload({
+      title: "Billing invite conflict",
+      customer: "Northstar",
+      email: "maya@northstar.example",
+      summary: "Second billing admin invite returns a conflict.",
+      priority: "urgent",
+    }),
+  );
+  await updateTicket(
+    ticket.id,
+    parseUpdateTicketPayload({
+      note: "Customer reproduced this twice from the production workspace.",
+    }),
+  );
+
+  const matches = await listTickets({ query: "production workspace" });
+
+  assert.equal(matches.length, 1);
+  assert.equal(matches[0].id, ticket.id);
+});
+
 test("rejects invalid update payloads", () => {
   assert.throws(
     () => parseUpdateTicketPayload({ status: "closed" }),

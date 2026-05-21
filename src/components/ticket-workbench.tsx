@@ -258,7 +258,7 @@ export function TicketWorkbench() {
                   onChange={(event) =>
                     runFilterChange(() => setQuery(event.target.value))
                   }
-                  placeholder="Search title, customer, email, tag"
+                  placeholder="Search title, customer, email, note, tag"
                   className="h-10 w-full rounded-md border border-zinc-200 bg-white pl-9 pr-3 text-sm outline-none transition focus:border-teal-700"
                 />
               </label>
