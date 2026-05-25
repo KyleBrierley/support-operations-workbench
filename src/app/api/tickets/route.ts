@@ -30,6 +30,7 @@ export async function GET(request: Request) {
       | TicketPriority
       | "all"
       | undefined,
+    assignee: searchParams.get("assignee") ?? undefined,
     query: searchParams.get("q") ?? undefined,
   });
 

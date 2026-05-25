@@ -15,6 +15,7 @@ export type { Ticket, TicketPriority, TicketStatus };
 export type TicketFilters = {
   status?: TicketStatus | "all";
   priority?: TicketPriority | "all";
+  assignee?: string | "all" | "unassigned";
   query?: string;
 };
 
@@ -182,6 +183,16 @@ export async function listTickets(filters: TicketFilters = {}) {
         ticket.priority !== filters.priority
       ) {
         return false;
+      }
+
+      if (filters.assignee && filters.assignee !== "all") {
+        if (filters.assignee === "unassigned") {
+          return ticket.assigneeId === null;
+        }
+
+        if (ticket.assigneeId !== filters.assignee) {
+          return false;
+        }
       }
 
       if (!query) {
