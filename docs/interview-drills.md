@@ -17,8 +17,9 @@ Support leads need to filter the queue by assignee, including unassigned tickets
 
 Done when:
 - The API accepts an `assignee` query parameter.
-- The UI exposes an assignee filter.
+- The UI exposes an assignee filter for Sam, Lee, and unassigned tickets.
 - Existing filters continue to compose correctly.
+- Focused tests cover assigned, unassigned, and composed filtering.
 
 ## Drill 3: Resolution Note Requirement
 

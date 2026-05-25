@@ -35,6 +35,15 @@ const statusIcons: Record<TicketStatus, typeof Circle> = {
   resolved: CheckCircle2,
 };
 
+const assigneeOptions = [
+  { label: "All assignees", value: "all" },
+  { label: "Sam", value: "sam" },
+  { label: "Lee", value: "lee" },
+  { label: "Unassigned", value: "unassigned" },
+] as const;
+
+type AssigneeFilter = (typeof assigneeOptions)[number]["value"];
+
 type FormState = {
   title: string;
   customer: string;
@@ -58,6 +67,7 @@ export function TicketWorkbench() {
   const [selectedId, setSelectedId] = useState<string | null>(null);
   const [status, setStatus] = useState<TicketStatus | "all">("all");
   const [priority, setPriority] = useState<TicketPriority | "all">("all");
+  const [assignee, setAssignee] = useState<AssigneeFilter>("all");
   const [query, setQuery] = useState("");
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
@@ -89,6 +99,9 @@ export function TicketWorkbench() {
     if (priority !== "all") {
       params.set("priority", priority);
     }
+    if (assignee !== "all") {
+      params.set("assignee", assignee);
+    }
     if (query.trim()) {
       params.set("q", query.trim());
     }
@@ -112,7 +125,7 @@ export function TicketWorkbench() {
     } finally {
       setLoading(false);
     }
-  }, [priority, query, status]);
+  }, [assignee, priority, query, status]);
 
   useEffect(() => {
     // Client-side polling of the local route handler is intentional for this practice app.
@@ -277,6 +290,24 @@ export function TicketWorkbench() {
                   {TICKET_PRIORITIES.map((item) => (
                     <option key={item} value={item}>
                       {item}
+                    </option>
+                  ))}
+                </select>
+              </label>
+              <label>
+                <span className="sr-only">Assignee</span>
+                <select
+                  value={assignee}
+                  onChange={(event) =>
+                    runFilterChange(() =>
+                      setAssignee(event.target.value as AssigneeFilter),
+                    )
+                  }
+                  className="h-10 w-full rounded-md border border-zinc-200 bg-white px-3 text-sm outline-none transition focus:border-teal-700 sm:w-40"
+                >
+                  {assigneeOptions.map((option) => (
+                    <option key={option.value} value={option.value}>
+                      {option.label}
                     </option>
                   ))}
                 </select>
