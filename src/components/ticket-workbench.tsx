@@ -128,7 +128,7 @@ export function TicketWorkbench() {
   }, [assignee, priority, query, status]);
 
   useEffect(() => {
-    // Client-side polling of the local route handler is intentional for this practice app.
+    // Client-side polling of the local route handler is intentional for this workbench.
     // eslint-disable-next-line react-hooks/set-state-in-effect
     void loadTickets();
   }, [loadTickets]);
@@ -216,7 +216,7 @@ export function TicketWorkbench() {
         <header className="flex flex-col gap-4 border-b border-zinc-200 pb-5 lg:flex-row lg:items-end lg:justify-between">
           <div>
             <p className="font-mono text-xs uppercase tracking-[0.18em] text-teal-700">
-              Support Desk
+              Support Operations
             </p>
             <h1 className="mt-2 text-3xl font-semibold tracking-normal text-zinc-950">
               Ticket operations
