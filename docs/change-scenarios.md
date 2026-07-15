@@ -1,8 +1,8 @@
-# Codex Interview Drills
+# Change Scenarios
 
-Use these as live tickets. For each one, practice saying your plan out loud before asking Codex to edit.
+Use these as representative support operations change requests. For each scenario, orient to the current behavior, state a concise plan, implement the smallest coherent change, and validate the acceptance criteria.
 
-## Drill 1: Broken Search
+## Scenario 1: Broken Search
 
 The customer reports that searching by note text does not return matching tickets.
 
@@ -11,7 +11,7 @@ Done when:
 - A focused test covers the behavior.
 - `npm run validate` passes.
 
-## Drill 2: Add Assignment Filter
+## Scenario 2: Add Assignment Filter
 
 Support leads need to filter the queue by assignee, including unassigned tickets.
 
@@ -21,7 +21,7 @@ Done when:
 - Existing filters continue to compose correctly.
 - Focused tests cover assigned, unassigned, and composed filtering.
 
-## Drill 3: Resolution Note Requirement
+## Scenario 3: Resolution Note Requirement
 
 Agents must add a note before moving a ticket to `resolved`.
 
@@ -30,7 +30,7 @@ Done when:
 - The UI captures a note for resolution.
 - Error states are visible and accessible.
 
-## Drill 4: Ticket Detail Route
+## Scenario 4: Ticket Detail Route
 
 Agents want a shareable URL for each ticket.
 

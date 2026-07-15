@@ -1,14 +1,16 @@
-# Support Ticket Practice App
+# Support Operations Workbench
 
-A small full-stack Next.js app for practicing the Codex Deployment Engineering interview loop:
+A working full-stack Next.js ticket workbench for support operations and AI-assisted software delivery workflows. It provides a compact environment for understanding a change request, inspecting an existing codebase, implementing a scoped change, validating behavior, and reviewing risk.
 
-1. Understand the ticket.
-2. Inspect the codebase.
-3. Ask Codex for scoped changes.
-4. Validate behavior.
-5. Review the diff and explain risk.
+The application uses App Router route handlers, a file-backed ticket store, a client queue UI, and TypeScript tests. AI assistance is part of the repository workflow, not a runtime product feature; this repository is not presented as a deployed AI product.
 
-The app uses App Router route handlers, a file-backed ticket store, a client queue UI, and TypeScript tests.
+## What It Demonstrates
+
+- A usable support queue with search, status, priority, and assignee filters.
+- Ticket creation and status updates through typed route handlers.
+- Shared validation and file-backed persistence with focused domain tests.
+- Repository guidance for bounded, reviewable AI-assisted changes.
+- A repeatable inspect, implement, validate, and diff-review workflow.
 
 ## Getting Started
 
@@ -38,9 +40,9 @@ npm run validate
 - `src/lib/ticket-types.ts` - browser-safe shared ticket types and constants.
 - `src/data/tickets.json` - seed ticket data.
 - `tests/tickets.test.ts` - focused domain tests.
-- `docs/interview-drills.md` - practice tickets.
+- `docs/change-scenarios.md` - representative change requests and acceptance criteria.
 
-## Practice Prompt Shape
+## Suggested Change Prompt
 
 ```text
 Goal: implement [ticket].

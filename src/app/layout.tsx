@@ -13,8 +13,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Support Desk Practice",
-  description: "A small full-stack ticket app for Codex interview practice.",
+  title: "Support Operations Workbench",
+  description:
+    "A full-stack ticket workbench for support operations and scoped change validation workflows.",
 };
 
 export default function RootLayout({
