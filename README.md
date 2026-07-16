@@ -4,6 +4,8 @@ A working full-stack Next.js ticket workbench for support operations and AI-assi
 
 The application uses App Router route handlers, a file-backed ticket store, a client queue UI, and TypeScript tests. AI assistance is part of the repository workflow, not a runtime product feature; this repository is not presented as a deployed AI product.
 
+![Support Operations Workbench showing the ticket queue, filters, ticket details, and new-ticket form](docs/app-screenshot.png)
+
 ## What It Demonstrates
 
 - A usable support queue with search, status, priority, and assignee filters.
@@ -41,6 +43,21 @@ npm run validate
 - `src/data/tickets.json` - seed ticket data.
 - `tests/tickets.test.ts` - focused domain tests.
 - `docs/change-scenarios.md` - representative change requests and acceptance criteria.
+
+## Ticket-to-Validation Workflow
+
+```mermaid
+flowchart LR
+    A["Change request<br/>goal and acceptance criteria"] --> B["Investigate<br/>guidance, UI, API, domain helpers"]
+    B --> C["Reproduce<br/>ticket data and current behavior"]
+    C --> D["Implement<br/>smallest scoped change"]
+    D --> E["Validate<br/>lint, types, focused tests"]
+    E --> F["Review<br/>diff, behavior, residual risk"]
+    F --> G["PR evidence<br/>summary and checks"]
+```
+
+This is the repository workflow around the application. The running workbench
+itself is conventional Next.js software and does not call an AI model.
 
 ## Suggested Change Prompt
 
